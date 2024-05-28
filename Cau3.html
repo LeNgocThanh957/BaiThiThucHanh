@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Câu 4</title>
+</head>
+<body>
+<script>
+    function kiemTraSNT(x) {
+        if (x <= 1) return false;
+        if (x === 2) return true;
+        for (let i = 2; i <= Math.sqrt(x); i++) {
+            if (x % i === 0) return false;
+        }
+        return true;
+    }
+
+    function sapXepSNTVaoMang(arr) {
+        let  snt = arr.filter(x => kiemTraSNT(x));
+        return snt.sort((a, b) => a - b);
+    }
+
+
+    let mang = [];
+    let soLuong = +prompt("Nhập vào số lượng phần tử của mảng: ");
+    for (let i = 0; i < soLuong; i++) {
+        let a = +prompt("Nhập phần tử thứ " + (i + 1));
+        mang.push(a);
+    }
+    document.write("<h1>" + "Array [" + mang + "]" + "</h1>" + "<br>");
+
+    let mangSNT = sapXepSNTVaoMang(mang);
+    document.write("Danh sách mảng các SNT theo thứ tự tăng dần: ["+mangSNT+"]");
+</script>
+</body>
+</html>

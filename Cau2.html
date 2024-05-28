@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Câu 2</title>
+</head>
+<body>
+<script>
+    function kiemTraKiTuHoa(a) {
+        let demKiTuHoa = 0;
+        for (let kiTu of a) {
+            if (kiTu === kiTu.toUpperCase() && kiTu !== kiTu.toLowerCase()) {
+                demKiTuHoa++;
+            }
+        }
+        if (demKiTuHoa > 0) {
+            return demKiTuHoa;
+        } else {
+            return "The Strings is not contain upper char";
+        }
+    }
+
+    let chuoi = prompt("Nhập vào chuỗi: ");
+    let kq = kiemTraKiTuHoa(chuoi);
+    document.write(kq);
+</script>
+</body>
+</html>

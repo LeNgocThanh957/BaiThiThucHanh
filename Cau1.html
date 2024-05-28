@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Câu 1</title>
+</head>
+<body>
+<script>
+    let array = [];
+    let tongChan = 0;
+    let tongLe = 0;
+    let soLuong = +prompt("Nhập từ bàn phím mảng số nguyên gồm n phần tử (n<=20): ");
+    if(soLuong > 20){
+        document.write("Vui lòng nhập số nguyên gồm n phần tử (<= 20)")
+    }else{
+        for (let i = 0; i < soLuong; i++) {
+            let a = +prompt("Nhập phần tử thứ " + (i + 1));
+            array.push(a);
+            if (a % 2 === 0) {
+                tongChan += a;
+            }
+            if (a % 2 !== 0) {
+                tongLe += a;
+            }
+        }
+        document.write("<h1>" + "Array [" + array + "]" + "</h1>" + "<br>");
+        document.write("Tổng các phần tử chẵn: " + tongChan + "<br>");
+        document.write("Tổng các phần tử lẻ: " + tongLe + "<br>");
+        let hieu = tongChan - tongLe;
+        document.write("Hiệu của Tổng các số chẵn và Tổng các số lẻ có trong mảng = " + hieu);
+    }
+
+
+
+</script>
+</body>
+</html>
